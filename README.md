@@ -22,30 +22,37 @@ existing libdisasm *system library* (so dynamic linking to it - no static link).
 
 Build
 -----
-  0. Download this version of hsdis:
-     $ git clone git://github.com/drazzib/base-hsdis.git
-     $ cd base-hsdis
+1. Download this version of hsdis:
 
-  1. Install build-dependencies
-     $ sudo apt-get install build-essential libdisasm-dev
+  
+    git clone git://github.com/drazzib/base-hsdis.git
+    cd base-hsdis
 
-  2. Regenerate configuration data and makefiles:
-     $ ./autogen.sh && ./configure
+2. Install build-dependencies
 
-  3. Run "make":
-     $ make
+    sudo apt-get install build-essential libdisasm-dev
 
-  4. Install the hsdis binary next to your libjvm.so:
-     $ JDK7=/usr/lib/jvm/java-7-openjdk-amd64
-     $ sudo cp -p .libs/hsdis.so.0.0.0 $JDK7/jre/lib/amd64/hsdis-amd64.so
+3. Regenerate configuration data and makefiles:
 
-  5. Enjoy your disassembler:
-     $ XJAVA="$JDK7/bin/java -XX:+UnlockDiagnosticVMOptions -XX:+PrintAssembly"
-     $ $XJAVA -Xcomp -cp ~/Classes hello
-     $ $XJAVA -Xcomp -cp ~/Classes -XX:PrintAssemblyOptions=hsdis-print-bytes hello
-     $ $XJAVA -XX:-PrintAssembly -XX:+PrintStubCode
-     $ $XJAVA -XX:-PrintAssembly -XX:+PrintInterpreter
-     $ $XJAVA -XX:-PrintAssembly -XX:+PrintSignatureHandlers
+    ./autogen.sh && ./configure
+
+4. Run "make":
+
+    make
+
+5. Install the hsdis binary next to your libjvm.so:
+
+    JDK7=/usr/lib/jvm/java-7-openjdk-amd64
+    sudo cp -p .libs/hsdis.so.0.0.0 $JDK7/jre/lib/amd64/hsdis-amd64.so
+
+6. Enjoy your disassembler:
+
+    XJAVA="$JDK7/bin/java -XX:+UnlockDiagnosticVMOptions -XX:+PrintAssembly"
+    $XJAVA -Xcomp -cp ~/Classes hello
+    $XJAVA -Xcomp -cp ~/Classes -XX:PrintAssemblyOptions=hsdis-print-bytes hello
+    $XJAVA -XX:-PrintAssembly -XX:+PrintStubCode
+    $XJAVA -XX:-PrintAssembly -XX:+PrintInterpreter
+    $XJAVA -XX:-PrintAssembly -XX:+PrintSignatureHandlers
 
 License
 -------
