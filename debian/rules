@@ -1,0 +1,9 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@ --buildsystem=autoconf --with autoreconf
+
+override_dh_auto_install:
+	dh_auto_install
+	dh_link /usr/lib/$(DEB_HOST_MULTIARCH)/hsdis.so.0.0.0 /usr/lib/$(DEB_HOST_MULTIARCH)/hsdis-$(DEB_HOST_ARCH_CPU).so
+	rm debian/libbase-hsdis/usr/lib/$(DEB_HOST_MULTIARCH)/*.la

@@ -1,0 +1,18 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: base-hsdis
+Upstream-Contact: https://github.com/drazzib/base-hsdis
+Source: https://github.com/drazzib/base-hsdis
+
+Files: *
+Copyright:
+ Copyright (C) 2012 Damien Raude-Morvan
+ Copyright (C) 2008 John R. Rose.
+License: cc-by-3.0
+
+Files: debian/*
+Copyright: 2012, Damien Raude-Morvan <drazzib@debian.org>
+License: GPL-2.0+
+
+License: GPL-2.0+
+  On Debian GNU/Linux system you can find the complete text of the
+  GPL-2.0 license in '/usr/share/common-licenses/GPL-2'
